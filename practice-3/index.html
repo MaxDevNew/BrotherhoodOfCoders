@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Table with sort</h1>
+<input type="text" id="searchBar" placeholder="Введите не менее 3-х символов" />
+
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th onclick="sortTable(0)">ID</th>
+            <th onclick="sortTable(1)">Title</th>
+            <th onclick="sortTable(2)">Body</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+      
+    </tbody>
+</table>
+<script src="script.js"></script>
+</body>
+</html>
