@@ -1,0 +1,329 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Titillium Web", sans-serif;;
+    margin: 0;
+    padding: 0;
+    background-image: url(./image/gr1007_1500_800.png);
+    overflow-x: hidden;
+    height: 200vh;
+}
+
+header {
+    background-image: url("./image/3194926.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    top: 0;
+    z-index: 1000;
+    animation: fadeInDown 1s ease-in-out;
+    transition: padding 0.3s ease, font-size 0.3s ease;
+}
+
+header h1 {
+    font-size: 3rem;
+    transition: font-size 0.3s ease;
+}
+
+header p {
+    font-size: 1.2rem;
+    transition: font-size 0.3s ease;
+}
+
+nav {
+    background: -webkit-linear-gradient(135deg, #000000,#6a0f8f,#000000);
+    background: linear-gradient(135deg, #000000,#6a0f8f,#000000);
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #ff6347;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.5);
+}
+
+section {
+    padding: 60px 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    background-color: #fff;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+section h2::before, 
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #ff6347;
+    bottom: 0;
+    transition: none;
+}
+
+section.active h2::before {
+    left: 50%;
+    transform: translateX(-50%);
+    animation: expandLeft 1.5s forwards;
+}
+
+section.active h2::after {
+    right: 50%;
+    transform: translateX(50%);
+    animation: expandRight 1.5s forwards;
+}
+
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f7eeee;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.service-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 30%;
+    text-align: center;
+}
+
+.service-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #faf2f2;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #fff8f8;
+    line-height: 1.6;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.service-card:hover::before {
+    top: 100%;
+    left: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-link {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon {
+    width: 100px;
+    height: 40px;   
+}
+
+.social-links .social-link:nth-child(2) {
+    background-color: #ddd;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#about {
+    background-image: url(./image/gr553_1500_800.png);
+}
+
+#about p {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#about:hover {
+    background-position: right center;
+    transition: background-position 2s ease;
+}
+
+#contact {
+    background: -webkit-linear-gradient(180deg, #000000,#230b10,#331016,#230b10,#000000);
+    background: linear-gradient(180deg, #000000,#230b10,#331016,#230b10,#000000);
+    color: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    color: white;
+    padding-bottom: 10px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+}
+
+#services {
+    background: -webkit-linear-gradient(154deg, #000000,#000000,#ff0000);
+background: linear-gradient(154deg, #000000,#000000,#ff0000);
+}
+
+#services h2 {
+ color: rgb(240, 240, 240);
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes expandLeft {
+    0% {
+        width: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        width: 50%;
+        transform: translateX(0);
+    }
+}
+
+@keyframes expandRight {
+    0% {
+        width: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        width: 50%;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 40px 20px;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+    header p {
+        font-size: 1rem;
+    }
+    section {
+        padding: 40px 15px;
+    }
+    section h2 {
+        font-size: 1.75rem;
+    }
+    section p {
+        font-size: 1rem;
+    }
+    nav a {
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    header p {
+        font-size: 0.9rem;
+    }
+    nav a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+    section {
+        padding: 30px 10px;
+    }
+    section h2 {
+        font-size: 1.5rem;
+    }
+    section p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        flex-direction: column;
+    }
+
+    .service-card {
+        flex: 1 1 100%;
+    }
+}
+
+
+
